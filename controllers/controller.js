@@ -6,6 +6,7 @@ const { saveTransaction} = require("../mongoose/database");
 
 //middleware
 const createToken = async (req, res, next) => {
+  console.log("at least I have modified something")
   const secret = process.env.MPESA_CONSUMER_SECRET;
   const consumer = process.env.MPESA_CONSUMER_KEY;
   const auth = new Buffer.from(`${consumer}:${secret}`).toString("base64");
@@ -115,4 +116,4 @@ const callback = async (req, res) => {
 };
 
 
-module.exports = { createToken, postStk, callback};
+module.exports ={ createToken, postStk, callback};
